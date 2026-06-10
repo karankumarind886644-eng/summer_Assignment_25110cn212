@@ -21,11 +21,38 @@ int main() {
     printf("Sum = %d\n", result);
 
     return 0;
+
+}
+include <stdio.h>
+unsigned long long factorial(int n) {
+    unsigned long long result = 1;
+    for(int i = 1; i <= n; i++) {
+        result *= i;
+    }
+    return result;
+}
+
+int main() {
+    int num;
+
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    if(num < 0) {
+        printf("Factorial is not defined for negative numbers.\n");
+    } else {
+        printf("Factorial of %d = %llu\n", num, factorial(num));
+    }
+
+    return 0;
 }
 
 
-// write function to find maximum
 
-// write function to check prime
 
-// write function to find factorial
+
+
+
+
+
+
