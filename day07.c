@@ -1,7 +1,6 @@
 //  write a program to recursive factorial 
 
 #include <stdio.h>
-
 long long factorial(int n)
 {
     if (n == 0 || n == 1)
