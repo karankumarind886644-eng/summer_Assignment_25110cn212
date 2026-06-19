@@ -49,4 +49,49 @@ int main() {
         printf("\n");
     }
     return 0;
+// Write a program to Print hollow square 
+
+    ```c
+#include <stdio.h>
+
+int main() {
+    int n, i, j;
+
+    printf("Enter size of square: ");
+    scanf("%d", &n);
+
+    for(i = 1; i <= n; i++) {
+        for(j = 1; j <= n; j++) {
+
+            // Print * at borders
+            if(i == 1 || i == n || j == 1 || j == n)
+                printf("* ");
+            else
+                printf("  ");
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+    
 }
