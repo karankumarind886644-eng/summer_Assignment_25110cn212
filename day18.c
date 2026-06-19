@@ -1,4 +1,4 @@
-write a program to bubble short
+// write a program to bubble short
 
 #include <stdio.h>
 
