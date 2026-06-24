@@ -1,153 +1,88 @@
-// Write a program to Add matrices.
-
+Write a program to Find String Length Without strlen().
 #include <stdio.h>
 
 int main() {
-    int a[10][10], b[10][10], sum[10][10];
-    int rows, cols, i, j;
+    char str[100];
+    int length = 0;
 
-    printf("Enter number of rows and columns: ");
-    scanf("%d %d", &rows, &cols);
+    printf("Enter a string: ");
+    gets(str);
 
-    printf("Enter elements of first matrix:\n");
-    for(i = 0; i < rows; i++) {
-        for(j = 0; j < cols; j++) {
-            scanf("%d", &a[i][j]);
-        }
+    while (str[length] != '\0') {
+        length++;
     }
 
-    printf("Enter elements of second matrix:\n");
-    for(i = 0; i < rows; i++) {
-        for(j = 0; j < cols; j++) {
-            scanf("%d", &b[i][j]);
-        }
-    }
-
-    // Addition
-    for(i = 0; i < rows; i++) {
-        for(j = 0; j < cols; j++) {
-            sum[i][j] = a[i][j] + b[i][j];
-        }
-    }
-
-    printf("Sum of matrices:\n");
-    for(i = 0; i < rows; i++) {
-        for(j = 0; j < cols; j++) {
-            printf("%d ", sum[i][j]);
-        }
-        printf("\n");
-    }
+    printf("Length of string = %d", length);
 
     return 0;
 }
-
-
-//  Write a program to Subtract matrices. 
-
+Q82. Write a program to Reverse a String.
 #include <stdio.h>
+#include <string.h>
 
 int main() {
-    int a[10][10], b[10][10], sub[10][10];
-    int rows, cols, i, j;
+    char str[100], temp;
+    int i, len;
 
-    printf("Enter number of rows and columns: ");
-    scanf("%d %d", &rows, &cols);
+    printf("Enter a string: ");
+    gets(str);
 
-    printf("Enter first matrix:\n");
-    for(i = 0; i < rows; i++) {
-        for(j = 0; j < cols; j++) {
-            scanf("%d", &a[i][j]);
-        }
+    len = strlen(str);
+
+    for(i = 0; i < len / 2; i++) {
+        temp = str[i];
+        str[i] = str[len - i - 1];
+        str[len - i - 1] = temp;
     }
 
-    printf("Enter second matrix:\n");
-    for(i = 0; i < rows; i++) {
-        for(j = 0; j < cols; j++) {
-            scanf("%d", &b[i][j]);
-        }
-    }
-
-    // Subtraction
-    for(i = 0; i < rows; i++) {
-        for(j = 0; j < cols; j++) {
-            sub[i][j] = a[i][j] - b[i][j];
-        }
-    }
-
-    printf("Subtraction of matrices:\n");
-    for(i = 0; i < rows; i++) {
-        for(j = 0; j < cols; j++) {
-            printf("%d ", sub[i][j]);
-        }
-        printf("\n");
-    }
+    printf("Reversed string: %s", str);
 
     return 0;
 }
-
-
-//  Write a program to Transpose matrix.
-
+Q83. Write a program to Count Vowels and Consonants.
 #include <stdio.h>
 
 int main() {
-    int a[10][10], transpose[10][10];
-    int rows, cols, i, j;
+    char str[100];
+    int vowels = 0, consonants = 0, i;
 
-    printf("Enter rows and columns: ");
-    scanf("%d %d", &rows, &cols);
+    printf("Enter a string: ");
+    gets(str);
 
-    printf("Enter matrix elements:\n");
-    for(i = 0; i < rows; i++) {
-        for(j = 0; j < cols; j++) {
-            scanf("%d", &a[i][j]);
+    for(i = 0; str[i] != '\0'; i++) {
+        if((str[i] >= 'A' && str[i] <= 'Z') ||
+           (str[i] >= 'a' && str[i] <= 'z')) {
+
+            if(str[i]=='A'||str[i]=='E'||str[i]=='I'||str[i]=='O'||str[i]=='U'||
+               str[i]=='a'||str[i]=='e'||str[i]=='i'||str[i]=='o'||str[i]=='u')
+                vowels++;
+            else
+                consonants++;
         }
     }
 
-    // Transpose
-    for(i = 0; i < rows; i++) {
-        for(j = 0; j < cols; j++) {
-            transpose[j][i] = a[i][j];
-        }
-    }
-
-    printf("Transpose Matrix:\n");
-    for(i = 0; i < cols; i++) {
-        for(j = 0; j < rows; j++) {
-            printf("%d ", transpose[i][j]);
-        }
-        printf("\n");
-    }
+    printf("Vowels = %d\n", vowels);
+    printf("Consonants = %d\n", consonants);
 
     return 0;
 }
-
-
-//  Write a program to Find diagonal sum.
-
+Q84. Write a program to Convert Lowercase to Uppercase.
 #include <stdio.h>
 
 int main() {
-    int a[10][10];
-    int n, i, j;
-    int sum = 0;
+    char str[100];
+    int i;
 
-    printf("Enter size of square matrix: ");
-    scanf("%d", &n);
+    printf("Enter a string: ");
+    gets(str);
 
-    printf("Enter matrix elements:\n");
-    for(i = 0; i < n; i++) {
-        for(j = 0; j < n; j++) {
-            scanf("%d", &a[i][j]);
+    for(i = 0; str[i] != '\0'; i++) {
+        if(str[i] >= 'a' && str[i] <= 'z') {
+            str[i] = str[i] - 32;
         }
     }
 
-    // Diagonal Sum
-    for(i = 0; i < n; i++) {
-        sum = sum + a[i][i];
-    }
-
-    printf("Sum of diagonal elements = %d", sum);
+    printf("Uppercase String: %s", str);
 
     return 0;
 }
