@@ -37,7 +37,7 @@ int main() {
     char str[100];
 
     printf("Enter a string: ");
-    scanf("%s", str);
+    scanf("%s", str);2
 
     int count = 1;
     int len = strlen(str);
