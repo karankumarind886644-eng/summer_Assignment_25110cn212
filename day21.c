@@ -13,7 +13,6 @@ int main() {
     }
 
     printf("Length of string = %d", length);
-
     return 0;
 }
 Q82. Write a program to Reverse a String.
